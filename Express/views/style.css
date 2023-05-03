@@ -1,0 +1,112 @@
+body {
+                          margin: 0;
+                          padding: 0;
+                          font-family: Arial, sans-serif;
+                        }
+                        
+                        header {
+                          display: flex;
+                          justify-content: space-between;
+                          align-items: center;
+                          padding: 10px;
+                          background-color: #262626;
+                          color: #fff;
+                        }
+                        
+                        nav ul {
+                          list-style: none;
+                          margin: 0;
+                          padding: 0;
+                          display: flex;
+                        }
+                        
+                        nav ul li {
+                          margin-right: 20px;
+                        }
+                        
+                        nav ul li a {
+                          text-decoration: none;
+                          color: #fff;
+                        }
+                        
+                        nav ul li a:hover {
+                          color: #d3d3d3;
+                        }
+                        
+                        .container {
+                          max-width: 1000px;
+                          margin: 0 auto;
+                          padding: 20px;
+                        }
+                        
+                        h1 {
+                          margin-top: 0;
+                        }
+                        
+                        .btn {
+                          display: inline-block;
+                          padding: 10px 20px;
+                          border: none;
+                          border-radius: 5px;
+                          background-color: #0066cc;
+                          color: #fff;
+                          text-decoration: none;
+                          cursor: pointer;
+                          transition: background-color 0.3s ease;
+                        }
+                        
+                        .btn:hover {
+                          background-color: #0052a3;
+                        }
+                        
+                        table {
+                          border-collapse: collapse;
+                          width: 100%;
+                        }
+                        
+                        th, td {
+                          padding: 8px;
+                          text-align: left;
+                          border-bottom: 1px solid #ddd;
+                        }
+                        
+                        th {
+                          background-color: #f2f2f2;
+                        }
+                        
+                        form {
+                          display: flex;
+                          flex-direction: column;
+                          max-width: 500px;
+                          margin: 0 auto;
+                        }
+                        
+                        form label {
+                          margin-bottom: 5px;
+                        }
+                        
+                        form input[type="text"], form select {
+                          padding: 10px;
+                          border-radius: 5px;
+                          border: 1px solid #ccc;
+                          margin-bottom: 10px;
+                        }
+                        
+                        form select {
+                          width: 100%;
+                        }
+                        
+                        form input[type="submit"] {
+                          background-color: #0066cc;
+                          color: #fff;
+                          border: none;
+                          padding: 10px 20px;
+                          border-radius: 5px;
+                          cursor: pointer;
+                          transition: background-color 0.3s ease;
+                        }
+                        
+                        form input[type="submit"]:hover {
+                          background-color: #0052a3;
+                        }
+                        

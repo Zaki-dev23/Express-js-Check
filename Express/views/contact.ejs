@@ -1,0 +1,30 @@
+<!-- contact.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/style.css">
+
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Our Services</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1><%= title %></h1>
+    <ul class="contact-info">
+      <li><strong>Phone:</strong> <%= contactInfo.phone %></li>
+      <li><strong>Email:</strong> <%= contactInfo.email %></li>
+      <li><strong>Address:</strong> <%= contactInfo.address %></li>
+    </ul>
+  </main>
+</body>
+</html>
