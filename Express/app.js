@@ -1,39 +1,40 @@
-// Import required packages
-const express = require('express');
-const moment = require('moment');
-const ejs = require('ejs');
+const express = require("express");
+const moment = require("moment");
 const app = express();
 
-// Set EJS as the view engine
-app.set('view engine', 'ejs');
 
-// Define middleware to check time
+app.use(express.static("public"));
+// Middleware 
 const checkTime = (req, res, next) => {
   const now = moment();
-  const dayOfWeek = now.day();
-  const hourOfDay = now.hour();
-  if (dayOfWeek >= 1 && dayOfWeek <= 5 && hourOfDay >= 9 && hourOfDay <= 17) {
+  const day = now.day();
+  const hour = now.hour();
+
+  if (day >= 1 && day <= 7 && hour >= 9 && hour <= 23) {
     next();
   } else {
-    res.status(403).send('Sorry, the website is only available during working hours (Mon-Fri, 9am-5pm)');
+    res.status(403).send("Sorry, we are closed!");
   }
 };
 
-// Define routes for the pages
-app.get('/', checkTime, (req, res) => {
-  res.render('index', { title: 'Home', message: 'Welcome to our website!' });
+// engine EJS
+app.set("view engine", "ejs");
+
+// the routes
+app.get("/", checkTime, (req, res) => {
+  res.render("homepage");
 });
 
-app.get('/services', checkTime, (req, res) => {
-  res.render('services', { title: 'Our Services', services: ['Service 1', 'Service 2', 'Service 3'] });
+app.get("/services", checkTime, (req, res) => {
+  res.render("services");
 });
 
-app.get('/contact', checkTime, (req, res) => {
-  res.render('contact', { title: 'Contact Us', contactInfo: { phone: '123-456-7890', email: 'info@example.com', address: '123 Main St, Anytown USA' } });
+app.get("/contact", checkTime, (req, res) => {
+  res.render("contact");
 });
+
 
 // Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
+app.listen(3000, () => {
+  console.log("Server started on port 3000");
 });
